@@ -1,0 +1,9 @@
+Heap is a data structure also called as priority queue.
+It has only 3 functions, init, insert and delete (in my code init is initH, insert is insertH and delete is deleteH).
+Also all the functions work according to the flag, which the user provides at the beginning to specify which type of heap is to be used.
+There are some utility functions also, which are not accessible to the user.
+The utility functions are: adjust, heapyfy, and swap.
+adjust() function it adjust the newly added number to its right position, by knowing the type of heap, it is used after insertion.
+heapyfy() function does the same as the adjust, it is used when an element is deleted from the heap, it compares the left and right children of the ith index element and then swaps them according to type of heap.
+swap() function is used for swapping of elements, used in adjust and heapyfy.
+All the functions available to the user, except initH(), should have flag as the parameter which determines the type of heap the user wants.
