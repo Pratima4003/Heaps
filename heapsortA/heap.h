@@ -8,12 +8,13 @@ typedef struct heap{
   int *A;
   int s;
   int rear;
+  int type;
 }heap;
 
 //functions
-void initH(heap *H);
-void insertH(heap *H, int key, char flag);
-int deleteH(heap *H, char flag);
+void initH(heap *H, int type);
+void insertH(heap *H, int key);
+int deleteH(heap *H);
 void display(heap H);
 
 #endif
