@@ -15,6 +15,6 @@ typedef struct heap{
 void initH(heap *H, int type);
 void insertH(heap *H, int key);
 int deleteH(heap *H);
-void display(heap H);
+void displayH(heap H);
 
 #endif
