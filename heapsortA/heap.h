@@ -1,3 +1,6 @@
+#ifndef HEAP_H
+#define HEAP_H
+
 #include<stdlib.h>
 
 //structure of heap
@@ -12,3 +15,5 @@ void initH(heap *H);
 void insertH(heap *H, int key, char flag);
 int deleteH(heap *H, char flag);
 void preorder(heap H);
+
+#endif
