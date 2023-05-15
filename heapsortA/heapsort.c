@@ -30,7 +30,7 @@ void heapifysort(heap *h, int index){
             imin = 2 * i + 2;
         
         if(h->A[i] > h->A[imin]){
-            swapN(&h->A[i], &h->A[imax]);
+            swapN(&h->A[i], &h->A[imin]);
             i=imin;
         }
         
