@@ -8,7 +8,7 @@
 /* UTILITY FUNCTIONS */
 
 //swap() function which is required for swap and heapyfy
-void swap(int *a, int *b){
+void swapN(int *a, int *b){
   int temp = *a;
   *a = *b;
   *b = temp;
@@ -30,7 +30,7 @@ void heapifysort(heap *h, int index){
             imin = 2 * i + 2;
         
         if(h->A[i] > h->A[imin]){
-            swap(&h->A[i], &h->A[imax]);
+            swapN(&h->A[i], &h->A[imax]);
             i=imin;
         }
         
@@ -51,20 +51,20 @@ void heapSort(heap *h, char order){
         int data = h->A[0];
         int i = 0;
         
-        swap(&h->A[i], &h->A[index]);
+        swapN(&h->A[i], &h->A[index]);
         index--;
         // h->rear--;
         heapifysort(h, index);
     }
     if(h->A[0] > h->A[1])
-      swap(&h->A[0], &h->A[1]);
+      swapN(&h->A[0], &h->A[1]);
   
     if(order == 'A' || order == 'a')
         return;
     else{
         int s = 0, e = h->rear;
         while(s < e){
-            swap(&h->A[s], h->A[e]);
+            swapN(&h->A[s], h->A[e]);
             i++;
             j--;
         }
