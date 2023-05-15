@@ -26,6 +26,7 @@ int main(){
   
   char order;
   printf("Enter A for acending or D for descending:");
+  scanf("%c",&order);
   if(order != 'A' || order != 'a' || order != 'D' || order != 'd'){
     printf("PLEASE ENTER VALID DATA!!\n");
     exit(0);
