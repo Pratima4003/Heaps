@@ -2,6 +2,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<limits.h>
+#include"heap.h"
 #include"heapsort.h"
 
 /* UTILITY FUNCTIONS */
