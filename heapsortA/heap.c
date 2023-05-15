@@ -118,7 +118,7 @@ void insertH(heap *H, int key, char flag){
 }
 
 //preorder function to check the heap
-void preorder(heap H){
+void display(heap H){
   for(int i = 0; i <= H.rear; i++){
     if(H.A[i] != -1)
       printf("%d\t",H.A[i]);
