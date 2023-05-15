@@ -20,11 +20,11 @@ void swap(int *a, int *b){
 //if flag == 'X', do adjustment for max heap
 //else if flag == 'N' do adjustment for min heap
 //else dont do anything
-void adjust(heap *H, char flag){
+void adjust(heap *H){
   if(!H)
     return;
   int p,q;
-  if(flag == 'X' || flag == 'x'){
+  if(H->type == 1){
     for(int i = H->rear; i >= 0; i--){
       p = (i - 1) / 2;
       if(p >= 0){
@@ -51,12 +51,12 @@ void adjust(heap *H, char flag){
 //after deletion to satisfy the definition of max heap
 //if flag == 'X', do heapyfy for max heap
 //else if flag == 'N' do heapyfy for min heap
-void heapyfy(heap *H, char flag){
+void heapyfy(heap *H){
   int l,r;
   for(int i = 0; i <= H->rear; i++){
     l = 2 * i + 1;
     r = 2 * i + 2;
-    if(flag == 'X'){
+    if(H->type == 1){
       if(l < H->rear && r < H->rear){
         if(H->A[l] > H->A[r] && H->A[l] > H->A[i])
           swap(&H->A[i], &H->A[l]);
@@ -85,17 +85,18 @@ void heapyfy(heap *H, char flag){
 //HEAP FUNCTIONS
 
 //initH() is to initialize the heap
-void initH(heap *H){
+void initH(heap *H, int type){
   H->A = (int*)malloc(sizeof(int) * SIZE);
   H->s = SIZE;
   for(int i = 0; i < SIZE; i++)
     H->A[i] = -1;   //initialize all the elements of the array to -1
   H->rear = -1;
+  H->type = type;
   return;
 }
 
 //insertH() adds the element to the heap
-void insertH(heap *H, int key, char flag){
+void insertH(heap *H, int key){
   if(H->A[0] == -1){
     H->A[0] = key;
     H->rear++;
@@ -108,7 +109,7 @@ void insertH(heap *H, int key, char flag){
   H->rear++;
   if(H->rear < SIZE){
     H->A[H->rear] = key;
-    adjust(H, flag);
+    adjust(H);
   }
   else{
     printf("\nSPACE INSUFFICIENT\n");
@@ -127,13 +128,13 @@ void display(heap H){
 }
 
 //deleteH() function always deletes the zeroth index element from the heap
-int deleteH(heap *H, char flag){
+int deleteH(heap *H){
   int e = INT_MIN;
   if(H->A[0] == -1)
     return e;
   e = H->A[0];
   H->A[0] = H->A[H->rear];
   H->rear--;
-  heapyfy(H, flag);
+  heapyfy(H);
   return e;
 }
