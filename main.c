@@ -1,58 +1,66 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include"heap.h"
+#include"heapsort.h"
 
 int main(){
   heap H;
-  initH(&H);
-  char flag;
-  printf("ENTER X FOR MAX AND N FOR MIN HEAP:");
-  scanf("%c",&flag);
-  if(flag != 'X' && flag != 'n' && flag != 'x' && flag != 'N'){
+  
+  int flag;
+  printf("ENTER 1 FOR MAX AND 0 FOR MIN HEAP:");
+  scanf("%d",&flag);
+  if(flag != 1 && flag != 0){
     printf("PLEASE ENTER VALID DATA!!\n");
     return 0;
   }
-  insertH(&H, 12, flag);
+  initH(&H, flag);
+  insertH(&H, 12);
   //preorder(H);
   //printf("\n");
   
-  insertH(&H, 1, flag);
+  insertH(&H, 1);
   //preorder(H);
   //printf("\n");
   
-  insertH(&H, 13, flag);
+  insertH(&H, 13);
   //preorder(H);
   //printf("\n");
   
-  insertH(&H, 121, flag);
+  insertH(&H, 121);
   //preorder(H);
   //printf("\n");
   
-  insertH(&H, 98, flag);
+  insertH(&H, 98);
   //preorder(H);
   //printf("\n");
   
-  insertH(&H, 17, flag);
+  insertH(&H, 17);
   //preorder(H);
   //printf("\n");
   
-  insertH(&H, 15, flag);
+  insertH(&H, 15);
   //preorder(H);
   //printf("\n");
   
-  insertH(&H, 45, flag);
+  insertH(&H, 45);
   //preorder(H);
   //printf("\n");
   
-  insertH(&H, 3, flag);
+  insertH(&H, 3);
   //preorder(H);
   //printf("\n");
   
-  insertH(&H, 23, flag);
+  insertH(&H, 23);
+  
+  insertH(&H, 43);
+  insertH(&H, 563);
+  insertH(&H, 27);
   preorder(H);
   printf("\n");
   
-  printf("DELETED ELEMENT: %d\n",deleteH(&H, flag));
+  printf("DELETED ELEMENT: %d\n",deleteH(&H));
+  preorder(H);
+  printf("\n");
+  heapSort(&H);
   preorder(H);
   printf("\n");
   return 0;
