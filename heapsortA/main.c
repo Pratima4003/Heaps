@@ -21,6 +21,18 @@ int main(){
     fscanf(fp, "%d", &n);
     insertH(&H, n);
   }
+  displayH(H);
+  printf("\n");
+  
+  char order;
+  printf("Enter A for acending or D for descending:");
+  if(order != 'A' || order != 'a' || order != 'D' || order != 'd'){
+    printf("PLEASE ENTER VALID DATA!!\n");
+    exit(0);
+  }
+  heapSort(&H, order);
+  displayH(H);
+  printf("\n");
   return 0;
 }  
   
