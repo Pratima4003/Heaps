@@ -3,7 +3,7 @@
 #include<stdlib.h>
 #include<limits.h>
 #include"heap.h"
-#define SIZE 10
+#define SIZE 1000
 
 /* UTILITY FUNCTIONS */
 
