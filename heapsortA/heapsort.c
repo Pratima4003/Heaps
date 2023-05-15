@@ -3,7 +3,6 @@
 #include<stdlib.h>
 #include<limits.h>
 #include"heapsort.h"
-#define SIZE 100
 
 /* UTILITY FUNCTIONS */
 
@@ -43,7 +42,7 @@ void heapifysort(heap *h, int index){
 
 /* HEAP SORT */
 
-void heapSort(heap *h){
+void heapSort(heap *h, char order){
     int nodes = h->rear + 1;
     int index = h->rear;
 
