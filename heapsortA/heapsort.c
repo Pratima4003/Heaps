@@ -64,9 +64,9 @@ void heapSort(heap *h, char order){
     else{
         int s = 0, e = h->rear;
         while(s < e){
-            swapN(&h->A[s], h->A[e]);
-            i++;
-            j--;
+            swapN(&h->A[s], &h->A[e]);
+            s++;
+            e--;
         }
     }
     return;
